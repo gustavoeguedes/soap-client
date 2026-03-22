@@ -4,6 +4,9 @@ import com.dataaccess.webservicesserver.NumberConversion;
 import com.dataaccess.webservicesserver.NumberConversionSoapType;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
+
 @Service
 public class NumberService {
 
@@ -21,7 +24,7 @@ public class NumberService {
     public String convertNumberToWords(int numero) {
 
         return port.numberToWords(
-                java.math.BigInteger.valueOf(numero)
+                BigInteger.valueOf(numero)
         );
 
     }
@@ -29,7 +32,7 @@ public class NumberService {
     public String convertNumberToDollars(double numero) {
 
         return port.numberToDollars(
-                java.math.BigDecimal.valueOf(numero)
+                BigDecimal.valueOf(numero)
         );
 
     }
