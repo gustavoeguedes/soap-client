@@ -1,6 +1,5 @@
 package br.com.gustavoeguedes.soap_client.service;
 
-import com.dataaccess.webservicesserver.NumberConversion;
 import com.dataaccess.webservicesserver.NumberConversionSoapType;
 import org.springframework.stereotype.Service;
 
@@ -12,13 +11,8 @@ public class NumberService {
 
     private final NumberConversionSoapType port;
 
-    public NumberService() {
-
-        NumberConversion service =
-                new NumberConversion();
-
-        this.port =
-                service.getNumberConversionSoap();
+    public NumberService(NumberConversionSoapType port) {
+        this.port = port;
     }
 
     public String convertNumberToWords(int numero) {
