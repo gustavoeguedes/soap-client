@@ -29,6 +29,10 @@ Este projeto existe para validar, de forma prática, como:
 docker build -t soap-client:latest .
 ```
 
+Durante o build, o Maven executa `mvn clean package -DskipTests` e a geracao das classes SOAP acontece automaticamente via `cxf-codegen-plugin` (fase `generate-sources`).
+
+> Importante: como o WSDL esta configurado por URL remota no `pom.xml`, o build precisa de acesso a internet para gerar as classes.
+
 ### 2) Subir o container
 
 ```bash
@@ -79,6 +83,7 @@ docker rm soap-client-local
 
 - `src/main/java/.../controller/NumberController.java`: endpoints REST
 - `src/main/java/.../service/NumberService.java`: integração com SOAP
+- `target/generated-sources/cxf`: classes geradas a partir do WSDL
 - `Dockerfile`: build e runtime da aplicação
 
 

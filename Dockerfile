@@ -4,6 +4,7 @@ WORKDIR /app
 
 COPY . .
 
+# O 'package' aciona o cxf-codegen-plugin (generate-sources) e gera as classes SOAP.
 RUN mvn clean package -DskipTests
 
 FROM eclipse-temurin:21-jdk-jammy
