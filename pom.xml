@@ -95,9 +95,15 @@
 							<wsdlOptions>
 								<wsdlOption>
 									<wsdl>
+										http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL
+									</wsdl>
+								</wsdlOption>
+								<wsdlOption>
+									<wsdl>
 										https://www.dataaccess.com/webservicesserver/NumberConversion.wso?WSDL
 									</wsdl>
 								</wsdlOption>
+
 							</wsdlOptions>
 
 							<sourceRoot>
