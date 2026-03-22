@@ -1,6 +1,6 @@
 package br.com.gustavoeguedes.soap_client.controller;
 
-import br.com.gustavoeguedes.soap_client.controller.dto.ResponseDto;
+import br.com.gustavoeguedes.soap_client.controller.dto.NumbersResponseDto;
 import br.com.gustavoeguedes.soap_client.service.NumberService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,23 +19,23 @@ public class NumberController {
     }
 
     @GetMapping("/words")
-    public ResponseEntity<ResponseDto> convertNumberToWords(
+    public ResponseEntity<NumbersResponseDto> convertNumberToWords(
             @RequestParam int numero
     ) {
 
         var resp = numberService.convertNumberToWords(numero);
 
-        return ResponseEntity.ok(new ResponseDto(resp));
+        return ResponseEntity.ok(new NumbersResponseDto(resp));
 
     }
 
     @GetMapping("/dollar")
-    public ResponseEntity<ResponseDto> convertNumberToDollars(
+    public ResponseEntity<NumbersResponseDto> convertNumberToDollars(
             @RequestParam double numero
     ) {
 
         var resp = numberService.convertNumberToDollars(numero);
 
-        return ResponseEntity.ok(new ResponseDto(resp));
+        return ResponseEntity.ok(new NumbersResponseDto(resp));
     }
 }
